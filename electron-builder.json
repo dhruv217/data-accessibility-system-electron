@@ -1,5 +1,6 @@
 {
   "productName": "Data Accessibility System",
+  "copyright": "Copyright © 2020 Dhruv Tripathi <dhruv.tri7@gmail.com>",
   "directories": {
     "output": "release/"
   },
