@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { timer } from 'rxjs';
 import { switchMap, map, takeWhile, skipWhile, tap, skip } from 'rxjs/operators';
 import { SerialDeviceService, SerialDevice, SerialDeviceStates } from './services/serial-device.service';
@@ -18,12 +18,8 @@ export class HomeComponent {
       map(x => x === SerialDeviceStates.Connected)
     )
 
-  sensorsData$ = this.sensorsDataStore.currentData$.pipe(
-    tap(x => console.log(x))
-  )
-
-
-  constructor(private serialDevicesService: SerialDeviceService, private sensorsDataStore: SensorsDataStoreService) {}
+  constructor(
+    private serialDevicesService: SerialDeviceService) {}
 
 
 

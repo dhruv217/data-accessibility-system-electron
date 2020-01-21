@@ -2,58 +2,53 @@
   <div class="heading-container">
     <h1 class="title">Gauges</h1>
   </div>
+
   <div class="gauges-container" *ngIf="isConnectedToSerialDevice | async">
     <ng-container *ngIf="sensorsData$ | async as sensors">
-      <mat-card>
-        <mat-card-title>Temprature Sensor 1</mat-card-title>
-        <mat-card-content>
+      <div class="temp-gauges">
+        <mat-card>
+          <mat-card-title>Temprature Sensor 1</mat-card-title>
           <app-large-temprature-gauge
-            [value]="sensors.Temprature1"
+              [screenHeight]="scrHeight"
+              [value]="sensors.Temprature1"
           ></app-large-temprature-gauge>
-        </mat-card-content>
-      </mat-card>
-      <mat-card>
-        <mat-card-title>Temprature Sensor 2</mat-card-title>
-        <mat-card-content>
-          <app-temprature-gauge
+        </mat-card>
+        <mat-card>
+          <mat-card-title>Temprature Sensor 2</mat-card-title>
+            <app-temprature-gauge
+            [screenHeight]="scrHeight"
             [value]="sensors.Temprature2"
-          ></app-temprature-gauge>
-        </mat-card-content>
-      </mat-card>
-      <mat-card>
-        <mat-card-title>Temprature Sensor 3</mat-card-title>
-        <mat-card-content>
-          <app-temprature-gauge
+            ></app-temprature-gauge>
+        </mat-card>
+        <mat-card>
+          <mat-card-title>Temprature Sensor 3</mat-card-title>
+            <app-temprature-gauge
+            [screenHeight]="scrHeight"
             [value]="sensors.Temprature3"
-          ></app-temprature-gauge>
-        </mat-card-content>
-      </mat-card>
-      <mat-card>
-        <mat-card-title>Temprature Sensor 4</mat-card-title>
-        <mat-card-content>
-          <app-temprature-gauge
+            ></app-temprature-gauge>
+        </mat-card>
+        <mat-card>
+          <mat-card-title>Temprature Sensor 4</mat-card-title>
+            <app-temprature-gauge
+            [screenHeight]="scrHeight"
             [value]="sensors.Temprature4"
-          ></app-temprature-gauge>
-        </mat-card-content>
-      </mat-card>
-      <mat-card>
-        <mat-card-title>Air Flow Sensor</mat-card-title>
-        <mat-card-content>
-          <app-airflow-gauge [value]="sensors.AirFlow"></app-airflow-gauge>
-        </mat-card-content>
-      </mat-card>
-      <mat-card>
-        <mat-card-title>RPM Sensor</mat-card-title>
-        <mat-card-content>
-          <app-rpm-gauge [value]="sensors.RPM"></app-rpm-gauge>
-        </mat-card-content>
-      </mat-card>
-      <mat-card>
-        <mat-card-title>Fuel Flow Sensor</mat-card-title>
-        <mat-card-content>
-          <app-fuelflow-gauge [value]="sensors.FuelFlow"></app-fuelflow-gauge>
-        </mat-card-content>
-      </mat-card>
+            ></app-temprature-gauge>
+        </mat-card>
+      </div>
+      <div class="radial-gauges">
+        <mat-card>
+          <mat-card-title>Air Flow Sensor</mat-card-title>
+          <app-airflow-gauge [screenHeight]="scrHeight" [value]="sensors.AirFlow"></app-airflow-gauge>
+        </mat-card>
+        <mat-card>
+          <mat-card-title>RPM Sensor</mat-card-title>
+          <app-rpm-gauge [screenHeight]="scrHeight" [value]="sensors.RPM"></app-rpm-gauge>
+        </mat-card>
+        <mat-card>
+          <mat-card-title>Fuel Flow Sensor</mat-card-title>
+          <app-fuelflow-gauge [screenHeight]="scrHeight" [value]="sensors.FuelFlow"></app-fuelflow-gauge>
+        </mat-card>
+      </div>
     </ng-container>
   </div>
 </div>
