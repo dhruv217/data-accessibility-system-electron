@@ -1,0 +1,23 @@
+.container {
+  height: 100%;
+  width: 100%;
+
+  .heading-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    .title {
+      margin: 0;
+      padding: 10px 0 0 20px;
+    }
+  }
+  .charts-container {
+
+    mat-card {
+      width: 80%;
+      margin: 20px auto;
+    }
+  }
+}

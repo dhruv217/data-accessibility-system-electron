@@ -1,0 +1,14 @@
+<radial-gauge
+  units="Feet/Min"
+  title="Air Flow"
+  min-value="0"
+  max-value="50"
+  highlights='[ {"from": 0, "to": 30, "color": "#b0bec5"},
+                {"from": 30, "to": 40, "color": "#ffd600"},
+                {"from": 40, "to": 50, "color": "#ff6d00"} ]'
+  major-ticks="[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50]"
+  minor-ticks="5"
+  width="300"
+  height="300"
+  [value]="value"
+></radial-gauge>

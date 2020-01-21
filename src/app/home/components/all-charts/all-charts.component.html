@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="heading-container">
+    <h1 class="title">Charts</h1>
+  </div>
+  <div class="charts-container">
+    <mat-card >
+      <mat-card-title>Temprature 1</mat-card-title>
+      <mat-card-content>
+        <canvas
+          baseChart
+          [chartType]="'line'"
+          [datasets]="largeTempDataset"
+          [options]="options"
+          height="80"
+        >
+        </canvas>
+      </mat-card-content>
+    </mat-card>
+    <mat-card >
+      <mat-card-title>Temprature 2 - 4</mat-card-title>
+      <mat-card-content>
+        <canvas
+          baseChart
+          [chartType]="'line'"
+          [datasets]="tempDataSet"
+          [options]="options"
+          height="80"
+        >
+        </canvas>
+      </mat-card-content>
+    </mat-card>
+    <mat-card >
+      <mat-card-title>Air FLow</mat-card-title>
+      <mat-card-content>
+        <canvas
+          baseChart
+          [chartType]="'line'"
+          [datasets]="airFlowDataSet"
+          [options]="options"
+          height="80"
+        >
+        </canvas>
+      </mat-card-content>
+    </mat-card>
+    <mat-card >
+      <mat-card-title>RPM</mat-card-title>
+      <mat-card-content>
+        <canvas
+          baseChart
+          [chartType]="'line'"
+          [datasets]="rpmDataSet"
+          [options]="options"
+          height="80"
+        >
+        </canvas>
+      </mat-card-content>
+    </mat-card>
+    <mat-card >
+      <mat-card-title>Fuel Flow</mat-card-title>
+      <mat-card-content>
+        <canvas
+          baseChart
+          [chartType]="'line'"
+          [datasets]="fuelFlowDataSet"
+          [options]="options"
+          height="80"
+        >
+        </canvas>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

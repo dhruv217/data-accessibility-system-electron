@@ -1,0 +1,14 @@
+<linear-gauge
+  width="150"
+  height="400"
+  min-value="0"
+  max-value="1250"
+  units="°C"
+  title="Temprature"
+  highlights='[ {"from": 0, "to": 1000, "color": "#b0bec5"},
+                {"from": 1000, "to": 1125, "color": "#ffd600"},
+                {"from": 1125, "to": 1250, "color": "#ff6d00"} ]'
+  major-ticks="[0, 125, 250, 375, 500, 625, 750, 875, 1000, 1125, 1250]"
+  minor-ticks="5"
+  [value]="value"
+></linear-gauge>

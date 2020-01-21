@@ -1,0 +1,14 @@
+<radial-gauge
+  units="Rounds/Min"
+  title="RPM"
+  min-value="0"
+  max-value="5000"
+  highlights='[ {"from": 0, "to": 3000, "color": "#b0bec5"},
+                {"from": 3000, "to": 4000, "color": "#ffd600"},
+                {"from": 4000, "to": 5000, "color": "#ff6d00"} ]'
+  major-ticks="[0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000]"
+  minor-ticks="5"
+  width="300"
+  height="300"
+  [value]="value"
+></radial-gauge>

@@ -1,0 +1,55 @@
+<mat-drawer-container class="nav-drawer-container">
+  <mat-drawer mode="side" opened>
+    <mat-toolbar><img src="/assets/named-logo.png"/></mat-toolbar>
+    <div class="port-selector">
+      <mat-form-field>
+        <mat-label color="accent">Select a Port</mat-label>
+        <mat-select (selectionChange)="portSelectorValueChange($event)">
+          <mat-option
+            *ngFor="let serialDevice of avaliableSerialPorts | async"
+            [value]="serialDevice"
+          >
+            {{ serialDevice.path }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        [style.background-color]="
+          (isConnectedToSerialDevice | async) ? '#4caf50' : '#f4511e'
+        "
+      >
+        {{ (isConnectedToSerialDevice | async) ? "Connected" : "Connect" }}
+      </button>
+    </div>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        routerLink="/home/gauges"
+        routerLinkActive="list-item-active"
+        [class.disabled]="(isConnectedToSerialDevice | async) ? null: true"
+      >
+        <mat-icon aria-label="Gauges">near_me</mat-icon>Gauges</a
+      >
+      <a
+        mat-list-item
+        routerLink="/home/charts"
+        routerLinkActive="list-item-active"
+        [class.disabled]="(isConnectedToSerialDevice | async) ? null: true"
+      >
+        <mat-icon aria-label="Charts">gps_fixed</mat-icon>Charts</a
+      >
+      <a
+        mat-list-item
+        routerLink="/home/table"
+        routerLinkActive="list-item-active"
+        [class.disabled]="(isConnectedToSerialDevice | async) ? null: true"
+      >
+        <mat-icon aria-label="Table">track_changes</mat-icon>Table</a
+      >
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

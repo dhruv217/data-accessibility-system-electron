@@ -1,0 +1,14 @@
+<linear-gauge
+  width="150"
+  height="400"
+  min-value="-55"
+  units="°C"
+  title="Temprature"
+  max-value="125"
+  highlights='[ {"from": -55, "to": 65, "color": "#b0bec5"},
+                {"from": 65, "to": 95, "color": "#ffd600"},
+                {"from": 95, "to": 125, "color": "#ff6d00"} ]'
+  major-ticks="[-55, -25, 5, 35, 65, 95, 125]"
+  minor-ticks="5"
+  [value]="value"
+></linear-gauge>

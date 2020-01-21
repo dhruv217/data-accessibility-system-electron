@@ -1,0 +1,27 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  mat-card {
+    width: 30vw;
+
+    .connect {
+      display: flex;
+      .mat-icon {
+        width: 20%;
+        height: 30%;
+        font-size: 5em;
+      }
+
+      span {
+        width: 70%;
+        font-size: 1.5em;
+        display: inline-flex;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+}

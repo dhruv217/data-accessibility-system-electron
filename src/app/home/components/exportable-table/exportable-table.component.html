@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="heading-container">
+    <h1 class="title">Table</h1>
+    <span></span>
+    <button mat-raised-button (click)="export()">Export</button>
+  </div>
+  <mat-card class="table-container">
+  <table
+      mat-table
+      #DataTable
+      [dataSource]="dataSource"
+      class="mat-elevation-z0"
+    >
+      <!-- Temprature 1 Column -->
+      <ng-container matColumnDef="Temprature1" style="min-width: 100px;">
+        <th mat-header-cell *matHeaderCellDef>Temprature 1</th>
+        <td mat-cell *matCellDef="let row">{{ row.Temprature1 }}</td>
+      </ng-container>
+
+      <!-- Temprature 2 Column -->
+      <ng-container matColumnDef="Temprature2">
+        <th mat-header-cell *matHeaderCellDef>Temprature 2</th>
+        <td mat-cell *matCellDef="let row">{{ row.Temprature2 }}</td>
+      </ng-container>
+
+      <!-- Temprature 3 Column -->
+      <ng-container matColumnDef="Temprature3">
+        <th mat-header-cell *matHeaderCellDef>Temprature 3</th>
+        <td mat-cell *matCellDef="let row">{{ row.Temprature3 }}</td>
+      </ng-container>
+
+      <!-- Temprature 4 Column -->
+      <ng-container matColumnDef="Temprature4">
+        <th mat-header-cell *matHeaderCellDef>Temprature 4</th>
+        <td mat-cell *matCellDef="let row">{{ row.Temprature4 }}</td>
+      </ng-container>
+
+      <!-- RPM Column -->
+      <ng-container matColumnDef="RPM">
+        <th mat-header-cell *matHeaderCellDef>RPM</th>
+        <td mat-cell *matCellDef="let row">{{ row.RPM }}</td>
+      </ng-container>
+
+      <!-- Temprature 4 Column -->
+      <ng-container matColumnDef="AirFlow">
+        <th mat-header-cell *matHeaderCellDef>Air Flow</th>
+        <td mat-cell *matCellDef="let row">{{ row.AirFlow }}</td>
+      </ng-container>
+
+      <!-- Temprature 4 Column -->
+      <ng-container matColumnDef="FuelFlow">
+        <th mat-header-cell *matHeaderCellDef>Fuel Flow</th>
+        <td mat-cell *matCellDef="let row">{{ row.FuelFlow }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  </mat-card>
+</div>
