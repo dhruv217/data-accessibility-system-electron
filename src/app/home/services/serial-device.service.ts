@@ -84,12 +84,11 @@ export class SerialDeviceService implements OnInit, OnDestroy {
       });
       const parser = this.connection.pipe(new Readline());
       parser.on("data", x => {
-        console.log(x);
-        /* if (data_index > 2) {
+        if (data_index > 2) {
           this.sensorsDataStore.insertData(x);
         } else {
           data_index++;
-        } */
+        }
       });
     } else console.log("Not on electron.");
   }
