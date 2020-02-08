@@ -33,14 +33,6 @@
       >
       <a
         mat-list-item
-        routerLink="/home/charts"
-        routerLinkActive="list-item-active"
-        [class.disabled]="(isConnectedToSerialDevice | async) ? null: true"
-      >
-        <mat-icon aria-label="Charts">timeline</mat-icon>Charts</a
-      >
-      <a
-        mat-list-item
         routerLink="/home/table"
         routerLinkActive="list-item-active"
         [class.disabled]="(isConnectedToSerialDevice | async) ? null: true"

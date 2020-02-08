@@ -23,7 +23,10 @@ export class SerialDeviceService implements OnInit, OnDestroy {
     switchMap(x => this.getSerialPorts$),
     map((x: SerialDevice[]) =>
       x.filter(c =>
-        c.manufacturer ? c.manufacturer.indexOf("Arduino") > -1 : false
+        c.manufacturer ?
+          c.manufacturer.indexOf("Arduino") > -1 ||
+          c.manufacturer.indexOf("Silicon Labs") > -1
+        : false
       )
     )
   );
@@ -81,11 +84,12 @@ export class SerialDeviceService implements OnInit, OnDestroy {
       });
       const parser = this.connection.pipe(new Readline());
       parser.on("data", x => {
-        if (data_index > 2) {
+        console.log(x);
+        /* if (data_index > 2) {
           this.sensorsDataStore.insertData(x);
         } else {
           data_index++;
-        }
+        } */
       });
     } else console.log("Not on electron.");
   }
